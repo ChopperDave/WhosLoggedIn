@@ -11,7 +11,7 @@ Function Get-RdpSessions
         [string]$ComputerName 
     )
 
-    If(Test-Connection -Computername $ComputerName -BufferSize 16 -Count 1 -Quiet){
+    If(Test-Connection -Computername $ComputerName -BufferSize 16 -Count 2 -Quiet){
         Try{
             $processInfo = Get-WmiObject -Query "select * from win32_process where name='explorer.exe'" -ComputerName $ComputerName -ErrorAction Stop
 
